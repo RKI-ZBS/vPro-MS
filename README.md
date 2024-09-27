@@ -4,6 +4,7 @@ Untargeted viral proteomics workflow for the identification of human-pathogenic 
 This script of the viral proteomics workflow (vPro-MS) enables identification of human-pathogenic viruses from patient samples by untargeted proteomics. vPro-MS is based on an in-silico derived peptide library covering the human virome in [UniProtKB](https://www.uniprot.org/) (331 viruses, 20,386 genomes, 121,977 peptides).  The script is intended to identify human-pathogenic viruses from DiaNN (https://github.com/vdemichev/DiaNN) outputs of either DIA or diaPASEF data. A scoring algorithm (vProID) assesses the confidence of virus identification and the results are finally summarized in a report table.
 
 ![vPro-MS workflow](./workflow-BioRender.png)
+Created in BioRender. Grossegesse, M. (2024) BioRender.com/s15u220
 
 # Installation
 
