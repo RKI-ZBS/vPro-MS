@@ -1,0 +1,11 @@
+Package: vPro
+Title: Untargeted viral proteomics workflow for the identification of human-pathogenic viruses
+Version: 1.0
+Authors@R: 
+    person("Jörg", "Döllinger", , "DoellingerJ@rki.de", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-8309-082X"))
+Description: This script of the viral proteomics workflow (vPro-MS) enables identification of human-pathogenic viruses from patient samples by untargeted proteomics. vPro-MS is based on an in-silico derived peptide library covering the human virome in UniProtKB. The script is intended to identify human-pathogenic viruses from DiaNN outputs of either DIA or diaPASEF data. A scoring algorithm (vProID) assesses the confidence of virus identification and the results are finally summarized in a report table..
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
