@@ -16,6 +16,7 @@ The software was developed and tested with
 - R (version 4.3.0)
 - R package tidyverse (version 2.0.0)
 - R package xfun (version 0.4.0)
+- R package devtools 
 
 ## Data Sources
 ### Library
@@ -25,18 +26,20 @@ The vPro Peptide Library can be downloaded from zenodo (https://zenodo.org/recor
 Generated using DIA-NN (https://github.com/vdemichev/DiaNN)
 
 ## Installation Guide
-1. Install R and its packages
+1. Get vPro-MS
+    ```
+    git clone https://github.com/RKI-ZBS/vPro-MS.git
+    ```
+2. Install R and its packages
     Get and install R-version from https://www.r-project.org/
     ```
     CLI>R
     R>install.packages("tidyverse")
     R>install.packages("xfun")
+    R>install.packages("devtools")
+    R>devtools::install("./vPro-MS")
     R>quit(save="no")
     ```    
-2. Get vPro-MS
-    ```
-    git clone https://github.com/RKI-ZBS/vPro-MS.git
-    ```
 3. Download necessary peptide libraries
     ```
     wget https://zenodo.org/records/13832021/files/vPro-MS%20Library%201.0.zip?download=1
@@ -45,10 +48,9 @@ Generated using DIA-NN (https://github.com/vdemichev/DiaNN)
   
 ## Demo und Tests
 ```
-cd VPro-MS/
 R
-R>source(file="vPro.R")
-R>setwd("demo")
+R>library("vPro")
+R>setwd("./vPro-MS/demo/")
 R>assign_viral_species(file_peptides = "data.txt",
     file_virusDB = "library.txt",
     file_export = "new_results.tsv",
