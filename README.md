@@ -16,7 +16,7 @@ The software was developed and tested with
 - R (version 4.3.0)
 - R package tidyverse (version 2.0.0)
 - R package xfun (version 0.4.0)
-- R package devtools 
+- R package devtools (version 2.4.5)
 
 ## Data Sources
 ### Library
