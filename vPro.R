@@ -368,14 +368,14 @@ assign_viral_species <- function(file_peptides,
 }
 
 ###MAIN###
-setwd("C:/Users/Doellingerj/Desktop/VirusID/Virus Calling v4")
-assign_viral_species(file_peptides = "report_VirusID_Specificity.tsv",
-                     file_virusDB = "vPro.Peptide.Library.txt",
-                     file_export = "results_vPro.tsv",
-                     nr_human_peptides = 591159,
-                     fdr = 0.01,
-                     min_pep_species = 2,
-                     min_pep_subspecies = 2,
-                     min_vProIDScore = 2,
-                     topn_precursor = 3,
-                     filter_vProIDScore = TRUE)
+#setwd("C:/Users/User1/VirusID/NasalSamples/")
+#assign_viral_species(file_peptides = "report_VirusID_Specificity.tsv",
+#                     file_virusDB = "vPro.Peptide.Library.txt",
+#                     file_export = "results_vPro.tsv",
+#                     nr_human_peptides = 591159,
+#                     fdr = 0.01,
+#                     min_pep_species = 2,
+#                     min_pep_subspecies = 2,
+#                     min_vProIDScore = 2,
+#                     topn_precursor = 3,
+#                     filter_vProIDScore = TRUE)
