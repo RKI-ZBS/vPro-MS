@@ -21,11 +21,8 @@ The software was developed and tested with
 ### Library
 The vPro Peptide Library can be downloaded from zenodo (https://zenodo.org/records/13832021). The zip folder contains 3 peptide FASTA files (Contaminants.fasta, Human.fasta, vPro.Virus.fasta), which were used to predict the spectral library (vPro-lib.predicted.speclib). Please note, that the additional commands “--cut” and “--duplicate-proteins” are needed to reprocess the prediction in DiaNN. This spectral library should be used to identify peptide sequences from samples of human origin using DiaNN. Furthermore, the folder contains the metadata file of the viral peptide sequences (vPro.Peptide.Library.txt) and a summary file of the virus taxonomy covered by the library (Taxonomy.Summary.txt). The metadata file is used by this vPro script to identify viruses from the DiaNN main report.
 
-inkl. data format
-
 ### Output file Dia-NN
 Generated using DIA-NN (https://github.com/vdemichev/DiaNN)
-
 
 ## Installation Guide
 1. Install R and its packages
@@ -34,7 +31,7 @@ Generated using DIA-NN (https://github.com/vdemichev/DiaNN)
     CLI>R
     R>install.packages("tidyverse")
     R>install.packages("xfun")
-    R>exit
+    R>quit(save="no")
     ```    
 2. Get vPro-MS
     ```
@@ -47,9 +44,24 @@ Generated using DIA-NN (https://github.com/vdemichev/DiaNN)
     ```
   
 ## Demo und Tests
-### Demo Input
-### Demo Output
-### Demo Runtime
+```
+cd VPro-MS/
+R
+R>source(file="vPro.R")
+R>setwd("demo")
+R>assign_viral_species(file_peptides = "data.txt",
+    file_virusDB = "library.txt",
+    file_export = "new_results.tsv",
+    nr_human_peptides = 591159,
+    fdr = 0.01,
+    min_pep_species = 2,
+    min_pep_subspecies = 2,
+    min_vProIDScore = 2,
+    topn_precursor = 3,
+    filter_vProIDScore = TRUE)
+R>quit(save="no")
+```
+The demo input files are available within the demo directory. The script should run within a second and the output of the script can be compared to results.tsv.
 
 # Usage
 ## Small Examples
@@ -70,32 +82,32 @@ assign_viral_species(file_peptides = "report_VirusID_Specificity.tsv",
 ## Input and Arguments
 Argument | Description | Example
 --- | --- | ---
-file_peptides | | report_VirusID_Specificity.tsv
-file_virusDB | | Viral.Peptide.Library.txt
-file_export | | results_virusID.tsv
-nr_human_peptides | | 591159
-fdr | | 0.01
-min_pep_species | | 2
-min_pep_subspecies | | 2
-min_virIDScore | | 2
-topn_precursor | | 3
-filter_virIDScore | | TRUE
+file_peptides | DiaNN main output file containing the identified precursors | report_VirusID_Specificity.tsv
+file_virusDB | vPro Peptide Library | Viral.Peptide.Library.txt
+file_export | Output file of vPro-MS Virus Identification | results_virusID.tsv
+nr_human_peptides | Number of human peptides in the library | 591159
+fdr | FalseDiscoveryRate for peptide identification | 0.01
+min_pep_species | minimal number of identified peptides necessary for a species assignment | 2
+min_pep_subspecies | minimal number of identified peptides necessary for a subspecies assignment | 2
+min_virIDScore | vProID score necessary for taxonomic assignment | 2
+topn_precursor | number of most abundant precursor that are used for quantification | 3
+filter_virIDScore | should the results be filtered according to vProIDScore (Boolean) | TRUE
 
 ## Output
 The vPro script summarizes virus identification results in a single report table (Results_vPro.txt). The results represent an independent analysis of each sample in the DiaNN main report. The virus identifications are already filtered according to the thresholds configured in the vPro script. The report consists of the following columns:
 
 Column | Description | Example
 --- | --- | ---
-Run | Name of the sample | 
-Species | Virus species identified (NA = no identification) | 
-vProID.Score | vProID score | 
-No.Peptide.Sequences | Number of peptide sequences unique to the virus species | 
-Virus.Quantity | Quantity of the virus species calculated using the Top3 approach for absolute protein quantification | 
-Peptide.Sequences | Viral peptide sequences | 
-CScores | CScores of each virus peptide as reported by DiaNN | 
-Subspecies | Virus subspecies identified | 
-No.Peptide.Sequences.Subspecies | Number of peptide sequences unique to the virus subspecies | 
-Proteomes | Uniprot proteome accession number(s) for the top ranked virus proteome(s) | 
+Run | Name of the sample | VirusID_Specificity_T15
+Species | Virus species identified (NA = no identification) | Human coronavirus NL63
+vProID.Score | vProID score | 3.7046550047138
+No.Peptide.Sequences | Number of peptide sequences unique to the virus species | 27
+Virus.Quantity | Quantity of the virus species calculated using the Top3 approach for absolute protein quantification | 213596.333333333
+Peptide.Sequences | Viral peptide sequences | DEQIGYWNVQER;EMQSQSSHAVQNTVLNASIPESK;FIEQISAFTK
+CScores | CScores of each virus peptide as reported by DiaNN | 0.998553;0.996127;0.993292
+Subspecies | Virus subspecies identified | NA
+No.Peptide.Sequences.Subspecies | Number of peptide sequences unique to the virus subspecies | NA
+Proteomes | Uniprot proteome accession number(s) for the top ranked virus proteome(s) | UP000173136;UP000105969: Genome
 
 # Reference
 Grossegesse, M.; Horn, F.; Kurth, A.; Lasch, P.; Nitsche, A.; Doellinger, J. vPro-MS enables identification of human-pathogenic viruses from patient samples by untargeted proteomics. medRxiv 2024, https://doi.org/10.1101/2024.08.21.24312107
