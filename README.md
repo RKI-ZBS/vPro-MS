@@ -115,6 +115,7 @@ Proteomes | Uniprot proteome accession number(s) for the top ranked virus proteo
 Grossegesse, M.; Horn, F.; Kurth, A.; Lasch, P.; Nitsche, A.; Doellinger, J. vPro-MS enables identification of human-pathogenic viruses from patient samples by untargeted proteomics. medRxiv 2024, https://doi.org/10.1101/2024.08.21.24312107
 
 # License
+MIT License
 
 # Support
 Please post any questions, feedback, comments or suggestions on the GitHub Discussion board.
