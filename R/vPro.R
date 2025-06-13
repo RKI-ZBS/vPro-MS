@@ -1,7 +1,6 @@
 #packages#
 library(tidyverse)
 library(xfun, include.only = "normalize_path")
-use_mit_license()
 ####Functions####
 
 #' Load a DIA-NN report file
