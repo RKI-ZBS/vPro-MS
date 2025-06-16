@@ -51,8 +51,8 @@ Generated using DIA-NN (https://github.com/vdemichev/DiaNN)
 R
 R>library("vPro")
 R>setwd("./vPro-MS/demo/")
-R>assign_viral_species(file_peptides = "data.txt",
-    file_virusDB = "library.txt",
+R>assign_viral_species(file_peptides = "DiaNN main report.tsv",
+    file_virusDB = "vPro.Peptide.Library.txt",
     file_export = "new_results.tsv",
     nr_human_peptides = 591159,
     fdr = 0.01,
