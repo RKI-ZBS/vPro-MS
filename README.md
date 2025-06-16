@@ -63,7 +63,7 @@ R>assign_viral_species(file_peptides = "DiaNN main report.tsv",
     filter_vProIDScore = TRUE)
 R>quit(save="no")
 ```
-The demo input files are available within the demo directory. The script should run within a second and the output of the script can be compared to results.tsv.
+The demo input files are available within the demo directory. The script should run within a second and the output of the script can be compared to results.tsv. Please note that, due to file size limitations, some columns that are not necessary for running vPro have been removed from the 'DiaNN main report.tsv'. This is not necessary in order to run an analysis.
 
 # Usage
 ## Small Examples
