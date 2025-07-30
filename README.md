@@ -119,3 +119,6 @@ MIT License
 
 # Support
 Please post any questions, feedback, comments or suggestions on the GitHub Discussion board.
+
+# Disclaimer
+For Research Use Only
