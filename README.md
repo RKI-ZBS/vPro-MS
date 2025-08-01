@@ -112,6 +112,8 @@ No.Peptide.Sequences.Subspecies | Number of peptide sequences unique to the viru
 Proteomes | Uniprot proteome accession number(s) for the top ranked virus proteome(s) | UP000173136;UP000105969: Genome
 
 # Reference
+Grossegesse, M.; Horn, F.; Kurth, A.; Lasch, P.; Nitsche, A.; Doellinger, J. vPro-MS enables identification of human-pathogenic viruses from patient samples by untargeted proteomics. Nat Commun 16, 7041 (2025). https://doi.org/10.1038/s41467-025-62469-4
+
 Grossegesse, M.; Horn, F.; Kurth, A.; Lasch, P.; Nitsche, A.; Doellinger, J. vPro-MS enables identification of human-pathogenic viruses from patient samples by untargeted proteomics. medRxiv 2024, https://doi.org/10.1101/2024.08.21.24312107
 
 # License
